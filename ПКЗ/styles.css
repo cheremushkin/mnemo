@@ -1,0 +1,169 @@
+.tube-red {
+    fill: #ff8080;
+}
+.tube-to-red {
+    animation: tube-to-red 0.25s linear forwards;
+}
+@keyframes tube-to-red {
+    0% {
+        fill: #80b3ff;
+    }
+    100% {
+        fill: #ff8080;
+    }
+}
+
+.tube-blue {
+    fill: #80b3ff;
+}
+.tube-to-blue {
+    animation: tube-to-blue 0.25s linear forwards;
+}
+@keyframes tube-to-blue {
+    0% {
+        fill: #ff8080;
+    }
+    100% {
+        fill: #80b3ff;
+    }
+}
+
+
+/* SWITCHER BACKGROUND */
+.switch-overlay {
+    opacity:0.56099997;
+    fill:url(#switch-overlay);
+    stroke:#040101;
+    stroke-width:0.58395803;
+    stroke-linecap:square;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-dashoffset:0;
+    stroke-opacity:1;
+    paint-order:markers stroke fill;
+}
+
+
+/* ARROWS */
+.arrow {
+    fill: #fff
+}
+
+
+/* TEXT */
+@font-face {
+    font-family: 'Vera';
+    src: url('VeraMono.ttf');
+}
+text {
+    font-family: Vera, Tahoma;
+    fill-opacity: 1;
+    fill: #000;
+}
+.text-red {
+    fill: #ff0000;
+}
+
+
+/* BUTTON */
+.button-wrapper {
+    fill: #eee;
+    stroke: #4985e0;
+    stroke-width: 1px;
+    opacity:0.3;
+}
+
+.button-red {
+    fill: #e67a7a;
+}
+.button-to-red {
+    animation: button-to-red 0.1s linear forwards;
+}
+@keyframes button-to-red {
+    0% {
+        fill: #69cd69;
+    }
+    100% {
+        fill: #e67a7a;
+    }
+}
+
+.button-green {
+    fill: #69cd69;
+}
+.button-to-green {
+    animation: button-to-green 0.1s linear forwards;
+}
+@keyframes button-to-green {
+    0% {
+        fill: #e67a7a;
+    }
+    100% {
+        fill: #69cd69;
+    }
+}
+
+
+/* SMOKE */
+.cloud {
+    fill-opacity:1;
+    stroke:#000000;
+    stroke-width:3.24986124;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-opacity:1;
+    filter:url(#smoke)
+}
+
+
+
+/* OTHER DETAILS */
+#wrapper {
+    fill:#c8b7b7;
+    opacity: 0.3;
+    stroke:#4985e0;
+    stroke-width: 2;
+}
+#magis {
+    fill:none;
+    stroke:#a10000;
+    stroke-width:0.90435284;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+}
+#circle-circle {
+    fill:#b3b3b3;
+    stroke:#030303;
+    stroke-width:0.27420714;
+    stroke-miterlimit:4;
+}
+#circe-triangle {
+    fill:#b3b3b3;
+    stroke:#030303;
+    stroke-width:0.27420714;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+}
+#fork {
+    fill: url('#fork');
+    stroke:#000000;
+    stroke-width:0.4
+}
+
+
+/* ANIMATION */
+.blink {
+    animation: blink 1.5s linear infinite
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

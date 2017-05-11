@@ -1,0 +1,252 @@
+.tube-red {
+    fill: #ff8080;
+}
+.tube-to-red {
+    animation: tube-to-red 0.25s linear forwards;
+}
+@keyframes tube-to-red {
+    0% {
+        fill: #80b3ff;
+    }
+    100% {
+        fill: #ff8080;
+    }
+}
+
+.tube-blue {
+    fill: #80b3ff;
+}
+.tube-to-blue {
+    animation: tube-to-blue 0.25s linear forwards;
+}
+@keyframes tube-to-blue {
+    0% {
+        fill: #ff8080;
+    }
+    100% {
+        fill: #80b3ff;
+    }
+}
+
+
+/* SWITCHER BACKGROUND */
+.switch-overlay {
+    opacity:0.56099997;
+    fill:url(#switch-overlay);
+    stroke:#040101;
+    stroke-width:0.58395803;
+    stroke-linecap:square;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-dashoffset:0;
+    stroke-opacity:1;
+    paint-order:markers stroke fill;
+}
+
+
+/* ARROWS */
+.arrow {
+    fill: #fff
+}
+
+
+/* TEXT */
+@font-face {
+    font-family: 'Vera';
+    src: url('VeraMono.ttf');
+}
+text {
+    font-family: Vera, Tahoma;
+    fill-opacity: 1;
+    fill: #000;
+}
+.text-red {
+    fill: #ff0000;
+}
+
+
+/* BUTTON */
+.button-wrapper {
+    fill: #eee;
+    stroke: #4985e0;
+    stroke-width: 1px;
+    opacity:0.3;
+}
+
+.button-red {
+    fill: #e67a7a;
+}
+.button-to-red {
+    animation: button-to-red 0.1s linear forwards;
+}
+@keyframes button-to-red {
+    0% {
+        fill: #69cd69;
+    }
+    100% {
+        fill: #e67a7a;
+    }
+}
+
+.button-green {
+    fill: #69cd69;
+}
+.button-to-green {
+    animation: button-to-green 0.1s linear forwards;
+}
+@keyframes button-to-green {
+    0% {
+        fill: #e67a7a;
+    }
+    100% {
+        fill: #69cd69;
+    }
+}
+
+
+
+/* LED */
+.led {
+    opacity: 1;
+    fill-opacity: 1;
+    stroke-opacity: 1;
+    fill-rule: nonzero;
+    stroke-width: 0;
+    stroke-linecap: square;
+    paint-order: markers stroke fill;
+    stroke-linejoin: round;
+    stroke-miterlimit: 4;
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+}
+
+.led-green-0 {
+    fill: url(#linearGradient4656);
+    stroke: #9e9e9e;
+}
+.led-green-1 {
+    fill: url(#linearGradient4702);
+    stroke: url(#linearGradient4716);
+}
+.led-green-2 {
+    fill: #003f00;
+    stroke: #ffffff;
+}
+.led-green-3 {
+    fill: url(#radialGradient4781);
+    stroke: url(#radialGradient4943);
+}
+.led-green-4 {
+    fill: url(#radialGradient4745);
+    stroke: #ffffff;
+    filter: url(#filter4851)
+}
+
+.led-red-0 {
+    fill: url(#linearGradient4957);
+    stroke: #9e9e9e;
+}
+.led-red-1 {
+    fill: url(#linearGradient4959);
+    stroke: url(#linearGradient4961);
+}
+.led-red-2 {
+    fill: #720c09;
+    stroke: #ffffff;
+}
+.led-red-3 {
+    fill: url(#radialGradient4963);
+    stroke: url(#radialGradient4965);
+}
+.led-red-4 {
+    fill: url(#radialGradient4967);
+    stroke: #ffffff;
+    filter: url(#filter5063)
+}
+
+.led-black-0 {
+    fill: url(#linearGradient5101);
+    stroke: #9e9e9e;
+}
+.led-black-1 {
+    fill: url(#linearGradient5103);
+    stroke: url(#linearGradient5105);
+}
+.led-black-2 {
+    fill: #000000;
+    stroke: #ffffff;
+}
+.led-black-3 {
+    fill: #000000;
+    stroke: url(#radialGradient5109);
+}
+.led-black-4 {
+    fill: url(#radialGradient5141);
+    stroke: #ffffff;
+    filter: url(#filter4851)
+}
+
+
+/* SMOKE */
+.cloud {
+    fill-opacity:1;
+    stroke:#000000;
+    stroke-width:3.24986124;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+    stroke-opacity:1;
+    filter:url(#smoke)
+}
+
+
+
+/* OTHER DETAILS */
+#wrapper {
+    fill:#c8b7b7;
+    opacity: 0.3;
+    stroke:#4985e0;
+    stroke-width: 2;
+}
+#magis {
+    fill:none;
+    stroke:#a10000;
+    stroke-width:0.90435284;
+    stroke-linecap:butt;
+    stroke-linejoin:miter;
+    stroke-miterlimit:4;
+}
+#circle-circle {
+    fill:#b3b3b3;
+    stroke:#030303;
+    stroke-width:0.27420714;
+    stroke-miterlimit:4;
+}
+#circe-triangle {
+    fill:#b3b3b3;
+    stroke:#030303;
+    stroke-width:0.27420714;
+    stroke-miterlimit:4;
+    stroke-dasharray:none;
+}
+#fork {
+    fill: url('#fork');
+    stroke:#000000;
+    stroke-width:0.4
+}
+
+
+/* ANIMATION */
+.blink {
+    animation: blink 1.5s linear infinite
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}

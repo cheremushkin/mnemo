@@ -29,7 +29,8 @@ Object.defineProperty(Array.prototype, "equals", {enumerable: false});
 /* AJAX */
 function request(data) {
     var request = new XMLHttpRequest();
-    request.open('GET', 'http://localhost/mnemo2/index.php' + (data ? ('?' + data) : ''), true);
+
+    request.open('GET', 'http://localhost/mnemo/ПКЗ/index.php' + (data ? ('?' + data) : ''), true);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     request.timeout = 1000;
 

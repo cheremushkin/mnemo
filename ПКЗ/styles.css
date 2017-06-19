@@ -29,10 +29,9 @@
 }
 
 
-/* SWITCHER BACKGROUND */
+/* SWITCHER */
 .switch-overlay {
     opacity:0.56099997;
-    fill:url(#switch-overlay);
     stroke:#040101;
     stroke-width:0.58395803;
     stroke-linecap:square;
@@ -165,5 +164,29 @@ text {
     }
     50% {
         opacity: 0;
+    }
+}
+
+.hblink {
+    animation: hblink 1.5s linear infinite
+}
+@keyframes hblink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.rotate {
+    animation: rotation 5s linear infinite
+}
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
     }
 }

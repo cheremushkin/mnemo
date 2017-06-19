@@ -1,57 +1,45 @@
-function Button(id, state) {
-    var _group,
-        _wrapper, _slider,
-        _state = state, _active;
+function Button(id) {
+    this.wrapper = this.svg.g();
+    var _background, _slider,
+        _state, _active;
 
-    _wrapper = this.svg.rect(0, 0, 30, 10).attr({
-        'class': 'button-wrapper'
-    });
-    _slider = this.svg.rect(_state ? 19 : 1, 1, 10, 8).attr({
-        'class': _state ? 'button-green' :'button-red',
-        'cursor': 'pointer'
-    });
+    _background = this.svg.rect(0, 0, 30, 10).attr({'class': 'button-wrapper'});
+    _slider = this.svg.rect(_state ? 19 : 1, 1, 10, 8).attr({'cursor': 'pointer'});
+    this.wrapper.add(_background, _slider).attr({'id': id + '-button'});
 
-    _group = this.svg.g(_wrapper, _slider).attr({
-        'id': id + '-button'
-    });
+    // начальное состояние
+    this.init = function(bool) {
+        _state = bool;
 
-
-    // перемещение
-    this.translate = function(x, y) {
-        _group.attr({
-            'transform': 'translate(' + x + ', ' + y + ')'
+        _slider.attr({
+            'class': _state ? 'button-green' : 'button-red',
+            'x': _state ? 19 : 1
         });
 
         return this;
     };
 
-    // смена состояния (без отправки сигнала)
-    this.state = function(value) {
-        _state = value;
+    // смена состояния
+    this.change = function(bool) {
+        if (_state === bool) return this;
+        _state = bool;
 
-        _slider.animate({
-            'x': _state ? 19 : 1
-        }, 100);
-        _slider.attr({
-            'class': _state ? 'button-green button-to-green' :'button-red button-to-red'
-        })
+        _slider.animate({'x': _state ? 19 : 1}, 100);
+        _slider.attr({'class': _state ? 'button-to-green' : 'button-to-red'})
+
+        return this;
     };
 
 
     // нажатие
     _switch = function() {
-        _state = !_state;
+        this.change(!_state);
 
         // отправка запроса на сервер
         request(id + '=' + (_state ? 1 : 0));
-
-        _slider.animate({'x': _state ? 19 : 1}, 100);
-        _slider.attr({'class': _state ? 'button-to-green' :'button-to-red'
-        })
     };
 
-    // стандартно включен
-    _slider.click(_switch); // событие нажатия
+    _slider.click(_switch.bind(this)); // событие нажатия
     _active = true;
 
 

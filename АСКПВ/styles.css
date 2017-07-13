@@ -32,7 +32,6 @@
 /* SWITCHER BACKGROUND */
 .switch-overlay {
     opacity:0.56099997;
-    fill:url(#switch-overlay);
     stroke:#040101;
     stroke-width:0.58395803;
     stroke-linecap:square;
@@ -198,7 +197,6 @@ text {
     stroke-miterlimit:4;
     stroke-dasharray:none;
     stroke-opacity:1;
-    filter:url(#smoke)
 }
 
 
@@ -232,9 +230,8 @@ text {
     stroke-dasharray:none;
 }
 #fork {
-    fill: url('#fork');
     stroke:#000000;
-    stroke-width:0.4
+    stroke-width:0.3
 }
 
 

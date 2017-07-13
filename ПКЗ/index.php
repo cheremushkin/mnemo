@@ -7,7 +7,6 @@
     };
 
 	if (!isset($_SESSION['init'])) {
-		echo 'hey';
 		$_SESSION['init'] = true;
 		$_SESSION['calibr1'] = 0;
 		$_SESSION['calibr2'] = 0;

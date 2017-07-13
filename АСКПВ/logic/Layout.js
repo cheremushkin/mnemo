@@ -1,11 +1,25 @@
 function Layout(svg) {
     // прототипирование
-    Led.prototype.svg = svg;
-    Button.prototype.svg = svg;
-    Tube.prototype.svg = svg;
-    TubeSwitcher.prototype.svg = svg;
-    TextValue.prototype.svg = svg;
-    TextLabel.prototype.svg = svg;
+    Led.prototype =
+    Button.prototype =
+    Tube.prototype =
+    TubeSwitcher.prototype =
+    Smoke.prototype =
+    TextValue.prototype =
+    TextLabel.prototype = {
+        svg: svg,
+        transform: function(transformation) {
+            var transform = (transformation.rotate !== 0) ? 'rotate(' + transformation.rotate + ', ' + transformation.x + ', ' + transformation.y + ') ' : '';
+            transform += 'translate(' + transformation.x + ', ' + transformation.y + ')';
+            transformation.mirror && (transform += ' scale(-1, 1)');
+            transformation.size && (transform += ' scale(' + transformation.size + ')');
+            this.wrapper.attr({
+                transform: transform
+            });
+
+            return this;
+        }
+    };
 
     // остальные элементы - фон
     svg.rect(60, 82, 55, 50).attr({'id': 'wrapper'});
@@ -14,22 +28,22 @@ function Layout(svg) {
     svg.rect(185, 30, 325, 40).attr({'id': 'wrapper'});
 
     this.flags = {
-        measure: new Led('measure', {x: 149, y: 21}, 1),
-        warm: new Led('warm', {x: 213, y: 21}, 1),
-        calibr: new Led('calibr', {x: 268, y: 21}, 1),
-        blow: new Led('blow', {x: 333, y: 21}, 1),
-        cond: new Led('cond', {x: 475, y: 128}, 0.75),
-        heat: new Led('heat', {x: 475, y: 146}, 0.75),
-        power: new Led('devicon', {x: 475, y: 163}, 0.75),
-        door: new Led('door', {x: 475, y: 180}, 0.75),
-        fire: new Led('fire', {x: 475, y: 198}, 0.75),
-        auto: new Led('auto', {x: 475, y: 216}, 0.75),
-        powerfail: new Led('powerfail', {x: 475, y: 234}, 0.75),
-        conden: new Led('conden', {x: 475, y: 250}, 0.75),
-        probestatus: new Led('probestatus', {x: 366, y: 92}, 0.5),
-        nostatus: new Led('nostatus', {x: 366, y: 190}, 0.5),
-        costatus: new Led('costatus', {x: 366, y: 245}, 0.5),
-        fail: new Led('error', {x: 389, y: 21}, 1)
+        measure: new Led('measure').transform({x: 203, y: 55, size: 0.35}),
+        warm: new Led('warm').transform({x: 268, y: 55, size: 0.35}),
+        calibr: new Led('calibr').transform({x: 323, y: 55, size: 0.35}),
+        blow: new Led('blow').transform({x: 388, y: 55, size: 0.35}),
+        cond: new Led('cond').transform({x: 515, y: 154, size: 0.35}),
+        heat: new Led('heat').transform({x: 515, y: 172, size: 0.35}),
+        power: new Led('devicon').transform({x: 515, y: 189, size: 0.35}),
+        door: new Led('door').transform({x: 515, y: 206, size: 0.35}),
+        fire: new Led('fire').transform({x: 515, y: 224, size: 0.35}),
+        auto: new Led('auto').transform({x: 515, y: 242, size: 0.35}),
+        powerfail: new Led('powerfail').transform({x: 515, y: 260, size: 0.35}),
+        conden: new Led('conden').transform({x: 515, y: 277, size: 0.35}),
+        probestatus: new Led('probestatus').transform({x: 393, y: 110, size: 0.2}),
+        nostatus: new Led('nostatus').transform({x: 393, y: 207, size: 0.2}),
+        costatus: new Led('costatus').transform({x: 393, y: 262, size: 0.2}),
+        fail: new Led('error').transform({x: 444, y: 55, size: 0.35})
     };
     this.buttons = {
         blow: new Button('blow', 0).translate(530, 90),
@@ -72,7 +86,6 @@ function Layout(svg) {
         tin: new TextValue('TIN', {x: 540, y: 41, space: 20}, 1),
         uin: new TextValue('UIN', {x: 540, y: 60, space: 25}, 1)
     };
-    this.smoke = new Smoke({x: 30, y: 75}, 0.2);
 
     // названия полей
     {new TextLabel({x: 60, y: 75}, ['Q', 'газ', ':'], 1);
@@ -130,7 +143,11 @@ function Layout(svg) {
 
     // остальные элементы -  развилка
     svg.path('m 0,0 h 20 v 6 h -7 v 6 h -6 v -6 h -7 z').attr({
-        'id': 'fork',
-        'transform': 'translate(218, 112.2)'
+        id: 'fork',
+        transform: 'translate(218, 112.2)',
+        fill: svg.gradient('l(0.5, 0, 0.5, 1) #ddd-#cdcdcd-#9d9d9d')
     })}
+
+    // дым
+    this.smoke = new Smoke().transform({x: 30, y: 75, size: 0.2});
 }

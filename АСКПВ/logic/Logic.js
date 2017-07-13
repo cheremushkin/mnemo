@@ -9,7 +9,7 @@ function Logic(layout) {
         for (parameter in _data.codes) {
             if (!ledDict.includes(parameter)) continue;
 
-            layout.flags[parameter].change(_data.codes[parameter]);
+            layout.flags[parameter].change(_data.codes[parameter], _data.codes[parameter] === -1 ? true : false);
         }
 
         var numericDict = 'no|no2|co|co2|tgas|qgas|tmagis|tzond|tprobe|ratein|rateex|qcalibr|pcalibr|tin|uin'.split('|'),

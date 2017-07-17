@@ -9,8 +9,7 @@ function TextValue(id, space) {
         }),
         this.svg.text(space, 0, _measure).attr({
             'font-size': 5 + 'pt',
-            'text-anchor': 'start',
-            alignmentBaseline: 'hanging'
+            'text-anchor': 'start'
         })
     ).attr({id: id + '-value'});
 
@@ -37,7 +36,7 @@ function TextValue(id, space) {
             });
         } // для синхронизации анимации
 
-        if (!measure.equals(_measure)) {
+        if (measure !== _measure) {
             _measure = measure;
 
             this.wrapper[1].animate({opacity: 0}, 250, mina.linear, function() {

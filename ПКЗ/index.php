@@ -20,165 +20,38 @@
     if (isset($_GET['calibr4'])) $_SESSION['calibr4'] = intval($_GET['calibr4']);
 
     $answer = array(
-        'no' => array(
-            'min' => 20,
-            'max' => 40,
-            'value' => random(5, 55),
-            'measure' => 'ppm'
-        ),
-        'no2' => array(
-            'min' => 10,
-            'max' => 20,
-            'value' => random(0, 30),
-            'measure' => 'ppm'
-        ),
-        'co' => array(
-            'min' => 250,
-            'max' => 350,
-            'value' => random(150, 450),
-            'measure' => 'ppm'
-        ),
-        'co2' => array(
-            'min' => 70,
-            'max' => 170,
-            'value' => random(0, 270),
-            'measure' => 'ppm'
-        ),
-        'so' => array(
-            'min' => 70,
-            'max' => 170,
-            'value' => random(0, 270),
-            'measure' => 'ppm'
-        ),
-        'h2s' => array(
-            'min' => 70,
-            'max' => 170,
-            'value' => random(0, 270),
-            'measure' => 'ppm'
-        ),
-        'ch4' => array(
-            'min' => 70,
-            'max' => 170,
-            'value' => random(0, 270),
-            'measure' => 'ppm'
-        ),
-        'sch' => array(
-            'min' => 70,
-            'max' => 170,
-            'value' => random(0, 270),
-            'measure' => 'ppm'
-        ),
-        'tGas' => array(
-            'min' => 235,
-            'max' => 265,
-            'value' => random(205, 295),
-            'measure' => '°C'
-        ),
-        'tIn' => array(
-            'min' => 100,
-            'max' => 150,
-            'value' => random(80, 160),
-            'measure' => '°C'
-        ),
-        'uIn' => array(
-            'min' => 180,
-            'max' => 250,
-            'value' => random(170, 260),
-            'measure' => 'V'
-        ),
-        'calibr1q' => array(
-            'min' => 8,
-            'max' => 25,
-            'value' => random(5, 30),
-            'measure' => 'l/min'
-        ),
-        'calibr1p' => array(
-            'min' => 8,
-            'max' => 25,
-            'value' => random(5, 8),
-            'measure' => 'atm'
-        ),
-        'calibr2q' => array(
-            'min' => 8,
-            'max' => 25,
-            'value' => random(5, 30),
-            'measure' => 'l/min'
-        ),
-        'calibr2p' => array(
-            'min' => 8,
-            'max' => 25,
-            'value' => random(5, 8),
-            'measure' => 'atm'
-        ),
-        'calibr3q' => array(
-            'min' => 8,
-            'max' => 25,
-            'value' => random(5, 30),
-            'measure' => 'l/min'
-        ),
-        'calibr3p' => array(
-            'min' => 8,
-            'max' => 25,
-            'value' => random(5, 8),
-            'measure' => 'atm'
-        ),
-        'calibr4q' => array(
-            'min' => 8,
-            'max' => 25,
-            'value' => random(5, 30),
-            'measure' => 'l/min'
-        ),
-        'calibr4p' => array(
-            'min' => 8,
-            'max' => 25,
-            'value' => random(5, 8),
-            'measure' => 'atm'
-        ),
-        'compass' => array(
-            'min' => 0,
-            'max' => 359,
-            'value' => random(0, 359),
-            'measure' => '°'
-        ),
-        'wind' => array(
-            'value' => random(1, 20),
-            'measure' => 'm/s'
-        ),
-        'humidity' => array(
-            'value' => random(0, 100),
-            'measure' => '%'
-        ),
-        'pressure' => array(
-            'value' => random(100, 1500),
-            'measure' => 'mm Hg'
-        ),
-        't' => array(
-            'value' => random(-20, 50),
-            'measure' => '°C'
+        'parameters' => array(
+            0 => array(
+                'name' => 'no',
+                'min' => 20,
+                'max' => 40,
+                'value' => random(5, 55),
+                'measure' => 'ppm'
+            )
         ),
         // -1 - red, 0 - grey, 1 - green
         'codes' => array(
-            'measure' => 1,
-            'calibr1' => $_SESSION['calibr1'],
-            'calibr2' => $_SESSION['calibr2'],
-            'calibr3' => $_SESSION['calibr3'],
-            'calibr4' => $_SESSION['calibr4'],
-            'fail' => 0,
-            'cond' => random(0, 1) > 0.5 ? 1 : 0,
-            'power' => 1,
-            'door' => 0,
-            'fire' => 0,
-            'auto' => 1,
-            'powerFail' => 0,
-            'heat' => random(0, 1) > 0.5 ? 1 : 0,
-            'hHisto' => 1,
-            'h4' => 1,
-            'flow' => 1,
-            'nStatus' => 1,//random(0, 1) > 0.5 ? 1 : 0,
-            'sStatus' => 1,//random(0, 1) > 0.5 ? 1 : 0,
-            'cStatus' => 1,//random(0, 1) > 0.5 ? 1 : 0,
-            'hStatus' => 1,//random(0, 1) > 0.5 ? 1 : 0,
-            'histoStatus' => 1,
+            0 => array('name'=> 'measure', 'value'=> 1),
+            1 => array('name'=> 'calibr1', 'value'=> $_SESSION['calibr1']),
+            2 => array('name'=> 'calibr2', 'value'=> $_SESSION['calibr2']),
+            3 => array('name'=> 'calibr3', 'value'=> $_SESSION['calibr3']),
+            4 => array('name'=> 'calibr4', 'value'=> $_SESSION['calibr4']),
+            5 => array('name'=> 'fail', 'value'=> 0),
+            6 => array('name'=> 'cond', 'value'=> random(0, 1) > 0.5 ? 1 : 0,),
+            7 => array('name'=> 'power', 'value'=> 1),
+            8 => array('name'=> 'door', 'value'=> 0),
+            9 => array('name'=> 'fire', 'value'=> 0),
+            10 => array('name'=> 'auto', 'value'=> 1),
+            11 => array('name'=> 'powerFail', 'value'=> 0),
+            12 => array('name'=> 'heat', 'value'=> random(0, 1) > 0.5 ? 1 : 0),
+            13 => array('name'=> 'hHisto', 'value'=> 1),
+            14 => array('name'=> 'h4', 'value'=> 1),
+            15 => array('name'=> 'flow', 'value'=> 1),
+            16 => array('name'=> 'nStatus', 'value'=> 1),
+            17 => array('name'=> 'sStatus', 'value'=> 1),
+            18 => array('name'=> 'cStatus', 'value'=> 1),
+            19 => array('name'=> 'hStatus', 'value'=> 1),
+            20 => array('name'=> 'histoStatus', 'value'=> 1)
         )
     );
 

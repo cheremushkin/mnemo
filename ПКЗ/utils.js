@@ -28,6 +28,7 @@ Object.defineProperty(Array.prototype, "equals", {enumerable: false});
 
 /* AJAX */
 function request(data) {
+    console.log(data);
     var request = new XMLHttpRequest();
 
     request.open('GET', 'http://localhost/mnemo/ПКЗ/index.php' + (data ? ('?' + data) : ''), true);

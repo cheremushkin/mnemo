@@ -17,18 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="styles.css">
 	</head>
 	<body style="background: url('background.svg') no-repeat;">
-		<svg id="svg" xmlns="http://www.w3.org/2000/svg" width="500mm" height="400mm" viewBox="0 0 500 400">
-			<defs>
-				<radialGradient id="button-on">
-					<stop offset="50%"  stop-color="#84ff84"/>
-					<stop offset="100%" stop-color="#77ed77"/>
-				</radialGradient>
-				<radialGradient id="button-off">
-					<stop offset="50%"  stop-color="#e19595"/>
-					<stop offset="100%" stop-color="#ed7777"/>
-				</radialGradient>
-			</defs>
-		</svg>
+		<svg id="svg" xmlns="http://www.w3.org/2000/svg" width="500mm" height="400mm" viewBox="0 0 500 400"></svg>
 		
 		<script>
 			var svg = Snap('svg'), layout, logic;
@@ -36,7 +25,7 @@
 			logic = new Logic(layout);
 			
 			request();
-			var requestInterval = setInterval(function() {request()}, 5000);
+			//var requestInterval = setInterval(function() {request()}, 5000);
 		</script>
 	</body>
 </html>

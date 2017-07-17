@@ -33,10 +33,8 @@ function Button(id) {
 
     // нажатие
     _switch = function() {
-        this.change(!_state);
-
         // отправка запроса на сервер
-        request(id + '=' + (_state ? 1 : 0));
+        request(id + '=' + (!_state ? 1 : 0));
     };
 
     _slider.click(_switch.bind(this)); // событие нажатия
